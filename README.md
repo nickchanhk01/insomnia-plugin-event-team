@@ -1,8 +1,10 @@
-# insomnia-plugin-auth-jwt
+# insomnia-plugin-event-team
 
-## environment variable
+## Add a `Event-Team-Token` header
 
-add these fields into your environment config to enable the plugin
+Target API: EC general backend
+
+add these fields into your environment config to enable the this behaviour
 
 ```json5
 "EC_ADD_EVENT_TOKEN": {
