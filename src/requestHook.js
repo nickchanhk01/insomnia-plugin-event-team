@@ -1,26 +1,19 @@
 // use strict
 
-const jwt = require('jsonwebtoken')
-const { generateJwt } = require('./utils')
+const R = require('ramda')
+
+const ecApiAddEventTeamToken = require('./functions/ecApiAddEventTeamToken')
+const { isNotNil } = require('./utils')
 
 module.exports = function(context) {
-  const headers = context.request.getEnvironmentVariable('FRESH_AUTH_JWT')
+  const ecAddEventTokenOption = context.request.getEnvironmentVariable(
+    'EC_ADD_EVENT_TOKEN'
+  )
 
-  if (!headers || !headers['CLIENT_ID'] || !headers['SECRET']) {
-    return
-  }
-
-  const authJwt = generateJwt({
-    payload: {
-      clientId: headers['CLIENT_ID']
-    },
-    secret: headers['SECRET'],
-    options: {
-      issuer: headers['ISSUER']
-    }
-  })
-
-  if (!authJwt) return
-
-  context.request.setHeader('Authorization', `Bearer ${authJwt}`)
+  R.compose(
+    R.when(
+      R.always(isNotNil(ecAddEventTokenOption)),
+      R.curry(ecApiAddEventTeamToken)(ecAddEventTokenOption)
+    )
+  )(context)
 }

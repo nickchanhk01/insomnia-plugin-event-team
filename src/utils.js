@@ -1,9 +1,11 @@
 // use strict
 
 const jwt = require('jsonwebtoken') // require jsonwebtoken library
+const R = require('ramda')
 
-// Create a function to generate JWT
-module.exports.generateJwt = ({ payload = {}, secret, options = {} }) => {
+const isNotNil = R.complement(R.isNil)
+
+const generateJwt = ({ payload = {}, secret, options = {} }) => {
   try {
     return jwt.sign(
       payload,
@@ -20,4 +22,9 @@ module.exports.generateJwt = ({ payload = {}, secret, options = {} }) => {
     console.error(err)
     return null
   }
+}
+
+module.exports = {
+  generateJwt,
+  isNotNil
 }

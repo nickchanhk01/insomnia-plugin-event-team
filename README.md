@@ -1,16 +1,15 @@
 # insomnia-plugin-auth-jwt
 
-Attach an auth header generated per request
-
 ## environment variable
 
 add these fields into your environment config to enable the plugin
 
-```json
-"FRESH_AUTH_JWT": {
-  "CLIENT_ID": "<your client id>",
-  "SECRET": "<your SECRET>",
-  "ISSUER": "<optional>"
+```json5
+"EC_ADD_EVENT_TOKEN": {
+  "once": 1,
+  "clientId": "",
+  "accountId": 123456,
+  "secret": ""
 }
 ```
 

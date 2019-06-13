@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["insomnia", "plugin", "header"],
+  "keywords": [
+    "insomnia",
+    "plugin",
+    "header"
+  ],
   "author": "Nick Chan<nickchan@hk01.com>",
   "license": "MIT",
   "insomnia": {
@@ -14,6 +18,9 @@
     "description": "Generate and attach a new auth JWT header for each request"
   },
   "dependencies": {
-    "jsonwebtoken": "^8.3.0"
+    "@hapi/joi": "^15.0.3",
+    "jsonwebtoken": "^8.3.0",
+    "nanoid": "^2.0.3",
+    "ramda": "^0.26.1"
   }
 }
