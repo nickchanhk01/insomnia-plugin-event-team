@@ -37,7 +37,7 @@ function ecApiAddEventTeamToken(option, context) {
   console.info(`generated jwt: %s`, jwt)
 
   if (context) {
-    context.request.setHeader('Event-Team-Token', jwt)
+    context.request.setHeader('Authorization', jwt)
   }
 }
 
