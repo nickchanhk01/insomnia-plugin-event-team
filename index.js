@@ -1,3 +1,3 @@
 // use strict
 
-module.exports.requestHooks = [require('./src/requestHook')]
+module.exports.templateTags = [require('./src/templateTags/ecAuthToken')]

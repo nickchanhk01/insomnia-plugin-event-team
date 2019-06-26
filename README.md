@@ -1,19 +1,10 @@
 # insomnia-plugin-event-team
 
-## Add a `Event-Team-Token` header
+## Template Tags
+
+### Event Team - EC auth token
 
 Target API: EC general backend
-
-add these fields into your environment config to enable the this behaviour
-
-```json5
-"EC_ADD_EVENT_TOKEN": {
-  "once": 1,
-  "clientId": "",
-  "accountId": 123456,
-  "secret": ""
-}
-```
 
 ## Custom build
 
