@@ -20,7 +20,7 @@
   "dependencies": {
     "@hapi/joi": "^15.0.3",
     "jsonwebtoken": "^8.3.0",
-    "nanoid": "^2.0.3",
+    "nanoid": "^3.1.31",
     "ramda": "^0.26.1"
   }
 }
